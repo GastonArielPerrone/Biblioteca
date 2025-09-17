@@ -16,6 +16,11 @@ const Header = ({ currentUser, logOut }) => {
                                 <Link className="nav-link" to="/">Gestión de Préstamos</Link>
                             </li>
                         )}
+                        {currentUser && (
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/stock-libros">Stock de Libros</Link>
+                            </li>
+                        )}
                         <li className="nav-item">
                             <Link className="nav-link" to="/registrar-usuario">Registrar Usuario</Link>
                         </li>

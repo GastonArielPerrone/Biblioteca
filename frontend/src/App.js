@@ -6,6 +6,8 @@ import GestionPrestamosPage from './pages/GestionPrestamosPage';
 import RegistroUsuarioPage from './pages/RegistroUsuarioPage';
 import RegistroEmpleadoPage from './pages/RegistroEmpleadoPage';
 import LoginPage from './pages/LoginPage';
+import StockLibrosPage from './pages/StockLibrosPage';
+import PrivateRoute from './components/common/PrivateRoute';
 import authService from './services/authService';
 import setupAxiosInterceptors from './services/axios-interceptor';
 
@@ -32,10 +34,22 @@ function App() {
         <Header currentUser={currentUser} logOut={logOut} />
         <div className="content">
           <Routes>
-            <Route path="/" element={<GestionPrestamosPage />} />
+            {/* Public Routes */}
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/registrar-usuario" element={<RegistroUsuarioPage />} />
             <Route path="/registrar-empleado" element={<RegistroEmpleadoPage />} />
-            <Route path="/login" element={<LoginPage />} />
+
+            {/* Protected Routes */}
+            <Route path="/" element={
+              <PrivateRoute>
+                <GestionPrestamosPage />
+              </PrivateRoute>
+            } />
+            <Route path="/stock-libros" element={
+              <PrivateRoute>
+                <StockLibrosPage />
+              </PrivateRoute>
+            } />
           </Routes>
         </div>
       </div>
