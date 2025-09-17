@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import generics
+from .models import Empleado
+from .serializers import EmpleadoSerializer
+from rest_framework.permissions import AllowAny
 
-# Create your views here.
+class EmployeeRegistrationView(generics.CreateAPIView):
+    queryset = Empleado.objects.all()
+    serializer_class = EmpleadoSerializer
+    permission_classes = [AllowAny]
