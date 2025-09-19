@@ -13,10 +13,3 @@ class Prestamo(models.Model):
     estado = models.CharField(max_length=10, default='pendiente')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        verbose_name = 'Prestamo'
-        verbose_name_plural = 'Prestamos'
-
-    def __str__(self):
-        return f"Préstamo de {self.id_libro.titulo_libro} a {self.id_usuario.nombre_usuario}"

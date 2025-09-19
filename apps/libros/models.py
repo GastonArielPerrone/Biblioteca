@@ -13,10 +13,3 @@ class Libro(models.Model):
     cantidad = models.IntegerField(null=False, blank=False)
     creado = models.DateTimeField(auto_now_add=True)
     actualizado = models.DateTimeField(auto_now=True)
-    
-    class Meta:
-        verbose_name = 'Libro'
-        verbose_name_plural = 'Libros'
-
-    def __str__(self):
-        return self.titulo_libro

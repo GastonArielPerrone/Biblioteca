@@ -147,6 +147,7 @@ AUTH_USER_MODEL = 'empleados.Empleado'
 # CORS Configuration
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://192.168.56.1:3000",
 ]
 
 # Django REST Framework Configuration
@@ -158,3 +159,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ]
 }
+
+AUTHENTICATION_BACKENDS = [
+    'apps.empleados.backends.EmpleadoAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
