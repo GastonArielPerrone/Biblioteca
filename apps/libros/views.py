@@ -1,7 +1,3 @@
-from rest_framework import generics
-from .models import Libro
-from .serializers import LibroSerializer
+from django.shortcuts import render
 
-class LibroList(generics.ListAPIView):
-    queryset = Libro.objects.all()
-    serializer_class = LibroSerializer
+# Create your views here.

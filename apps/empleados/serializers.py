@@ -1,18 +1,27 @@
+from django.contrib.auth.hashers import make_password
 from rest_framework import serializers
 from .models import Empleado
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
-class EmpleadoSerializer(serializers.ModelSerializer):
+class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Empleado
-        fields = ['id_empleado', 'dni', 'nombre_empleado', 'telefono', 'cargo', 'password']
+        fields = '__all__'
         extra_kwargs = {
-            'password': {'write_only': True}
+            'password': {'write_only': True}  # para que no se vea al leer
         }
 
     def create(self, validated_data):
-        user = Empleado.objects.create_user(**validated_data)
-        return user
+        password = validated_data.pop('password')  # sacamos la contraseña plana
+        empleado = Empleado(**validated_data)
+        empleado.password = make_password(password)  # la convertimos a hash
+        empleado.save()
+        return empleado
 
-class EmpleadoTokenObtainPairSerializer(TokenObtainPairSerializer):
-    username_field = 'dni'
+    def update(self, instance, validated_data):
+        password = validated_data.pop('password', None)
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        if password:
+            instance.password = make_password(password)  # hash si se actualiza
+        instance.save()
+        return instance

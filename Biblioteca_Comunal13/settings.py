@@ -51,9 +51,7 @@ LOCAL_APPS = [
 
 THIRD_PARTY_APPS = [
     'django_extensions',
-    'rest_framework',
-    'corsheaders',
-    'rest_framework_simplejwt',
+    'rest_framework'
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -141,9 +139,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Custom User Model
-AUTH_USER_MODEL = 'empleados.Empleado'
-
 # CORS Configuration
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
@@ -153,7 +148,8 @@ CORS_ALLOWED_ORIGINS = [
 # Django REST Framework Configuration
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',  # para login con sesión
+        'rest_framework.authentication.BasicAuthentication',    # para pruebas con Basic Auth
     ),
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',

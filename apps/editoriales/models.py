@@ -1,8 +1,7 @@
 from django.db import models
 
 class Editorial(models.Model):
-    id_editorial = models.AutoField(primary_key=True)
-    nombre_editorial = models.CharField(max_length=100, null=False, blank=False)
+    nombre_editorial = models.CharField(max_length=100, null=False, blank=False, primary_key=True)
     pais_editorial = models.CharField(max_length=50)
     calle_editorial = models.CharField(max_length=100)
     numero_calle_editorial = models.IntegerField()

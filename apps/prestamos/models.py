@@ -1,11 +1,14 @@
 from django.db import models
+from apps.empleados.models import Empleado
 from apps.libros.models import Libro
 from apps.usuarios.models import Usuario
 
+
+
 class Prestamo(models.Model):
-    id_prestamo = models.AutoField(primary_key=True)
-    id_libro = models.ForeignKey(Libro, on_delete=models.CASCADE, null=False, blank=False)
-    id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=False, blank=False)
+    titulo_libro = models.ForeignKey(Libro, on_delete=models.CASCADE, null=False, blank=False)
+    nombre_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=False, blank=False)
+    nombre_empleado = models.ForeignKey(Empleado,on_delete=models.CASCADE, null=False, blank=False)
     fecha_prestamo = models.DateField(auto_now_add=True)
     hora_prestamo = models.TimeField(auto_now_add=True)
     fecha_devolucion = models.DateField(null=True, blank=True)
