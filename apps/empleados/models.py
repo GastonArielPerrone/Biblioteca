@@ -1,7 +1,7 @@
 from django.db import models
 
 class Empleado(models.Model):
-    nombre_empleado = models.CharField(max_length=100, null=False, blank=False, primary_key=True)
+    nombre_empleado = models.CharField(max_length=100, null=False, blank=False)
     dni = models.CharField(max_length=15, unique=True, null=False, blank=False)
     password = models.CharField(max_length=128)
     telefono = models.CharField(max_length=20)
