@@ -6,4 +6,4 @@ from apps.autores.models import Autor
 class AutorAdmin(admin.ModelAdmin):
     list_display = ("nombre_autor", "nacionalidad")
     search_fields = ("nombre_autor", "nacionalidad")
-    list_filter = ("nombre_autor",)
+    list_filter = ("nombre_autor", "nacionalidad",)

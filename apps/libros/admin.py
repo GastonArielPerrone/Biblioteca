@@ -22,4 +22,6 @@ class LibroAdmin(admin.ModelAdmin):
                     "creado",
                     "actualizado",)
     list_filter = ("titulo_libro", 
-                    )
+                    "nombre_autor", 
+                    "nombre_editorial",
+                    "nombre_categoria",)
