@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Comunal 13 :: Stock de Libros</title>
+</head>
+<body>
+    <h1>Stock de libros</h1>
+    <table border="1">
+  <thead>
+    <tr>
+      <th><strong>Título</strong></th>
+      <th><strong>Autor</strong></th>
+      <th><strong>Editorial</strong></th>
+      <th><strong>Categoría</strong></th>
+      <th><strong>Fecha de publicación</strong></th>
+      <th><strong>Cantidad</strong></th>
+      <th><strong>Creado</strong></th>
+      <th><strong>Actualizado</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for libro in libros%}
+    <tr>
+      <td>{{libro.titulo_libro}}</td>
+      <td>{{libro.nombre_autor}}</td>
+      <td>{{libro.nombre_editorial}}</td>
+      <td>{{libro.nombre_categoria}}</td>
+      <td>{{libro.fecha_publicacion}}</td>
+      <td>{{libro.cantidad}}</td>
+      <td>{{libro.creado}}</td>
+      <td>{{libro.actualizado}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</body>
+</html>

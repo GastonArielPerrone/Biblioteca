@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # API V1
     path('api/', include('apps.usuarios.urls')),
-    path('api/', include('apps.libros.urls')),
+    path('libros/', include('apps.libros.urls')),
     path('api/', include('apps.prestamos.urls')),
     path('api/', include('apps.empleados.urls')),
     path('api/', include('apps.editoriales.urls')),
