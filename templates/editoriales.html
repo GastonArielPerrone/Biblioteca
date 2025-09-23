@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Biblioteca Comunal 13 :: Editoriales</title>
+</head>
+<body>
+  <header>
+    <img src="{% static './multimedia/logo_BC13.png' %}" width="150">
+  </header>
+  <nav>
+
+  </nav>
+  <main>
+    <h1 class="bona-nova-sc-bold font__white">Editoriales</h1>
+    <table border="1">
+  <thead>
+    <tr>
+      <th><strong>Editorial</strong></th>
+      <th><strong>País</strong></th>
+      <th><strong>Celle</strong></th>
+      <th><strong>Número calle</strong></th>
+      <th><strong>Casa</strong></th>
+      <th><strong>Edificio</strong></th>
+      <th><strong>Piso</strong></th>
+      <th><strong>Depto</strong></th>
+      <th><strong>Creado</strong></th>
+      <th><strong>Actualizado</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for editorial in editoriales%}
+    <tr>
+      <td>{{editorial.nombre_editorial}}</td>
+      <td>{{editorial.pais_editorial}}</td>
+      <td>{{editorial.calle_editorial}}</td>
+      <td>{{editorial.numero_calle_editorial}}</td>
+      <td>{{editorial.casa_editorial}}</td>
+      <td>{{editorial.edificio_editorial}}</td>
+      <td>{{editorial.piso_editorial}}</td>
+      <td>{{editorial.departamento_numero_casa_editorial}}</td>
+      <td>{{editorial.created_at}}</td>
+      <td>{{editorial.updated_at}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+  </main>
+  <footer>
+    <p class="align__center">©Copyright Biblioteca Comunal 13.Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>

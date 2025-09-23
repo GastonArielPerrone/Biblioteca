@@ -14,12 +14,17 @@ html, body {
     background-size: cover;
 }
 
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 header,footer {
     background-color: darkgrey;
 }
 
 .flex__footer {
-    display: flex;
+
 }
 
 .align__center {
