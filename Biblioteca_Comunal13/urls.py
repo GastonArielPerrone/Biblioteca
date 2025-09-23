@@ -22,6 +22,7 @@ urlpatterns = [
     # API V1
     path('usuarios/', include('apps.usuarios.urls')),
     path('autores/', include('apps.autores.urls')),
+    path('categorias/', include('apps.categorias.urls')),
     path('libros/', include('apps.libros.urls')),
     path('prestamos/', include('apps.prestamos.urls')),
     path('empleados/', include('apps.empleados.urls')),
