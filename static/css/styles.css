@@ -10,7 +10,7 @@ html, body {
     display: flex;
     flex-direction: column;
     font-size: 62.5%;
-    background-image: url('./multimedia/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg');
+    background-image: url("../multimedia/background.jpg");
     background-size: cover;
 }
 
