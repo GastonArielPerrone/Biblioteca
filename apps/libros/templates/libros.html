@@ -1,12 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'libros/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <title>Biblioteca Comunal 13 :: Stock de Libros</title>
 </head>
 <body>
-    <h1>Stock de libros</h1>
+  <header>
+    <img src="{% static 'libros/multimedia/logo_BC13.png' %}" width="150">
+  </header>
+  <nav>
+
+  </nav>
+  <main>
+    <h1 class="bona-nova-sc-bold font__white">Stock de libros</h1>
     <table border="1">
   <thead>
     <tr>
@@ -35,6 +47,9 @@
     {% endfor %}
   </tbody>
 </table>
-
+  </main>
+  <footer>
+    <p class="align__center">©Copyright Biblioteca Comunal 13.Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>

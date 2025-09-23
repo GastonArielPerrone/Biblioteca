@@ -1,0 +1,87 @@
+* {
+    margin: 1px;
+    padding: 3px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 62.5%;
+    background-image: url('./multimedia/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg');
+    background-size: cover;
+}
+
+header,footer {
+    background-color: darkgrey;
+}
+
+.flex__footer {
+    display: flex;
+}
+
+.align__center {
+    text-align: center;
+}
+
+p {
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4.5rem;
+}
+
+h3 {
+    font-size: 4rem;
+}
+
+h4 {
+    font-size: 3.5rem;
+}
+
+h5 {
+    font-size: 3rem;
+}
+
+h6 {
+    font-size: 2.5;
+}
+
+table {
+    background-color: aliceblue;
+    width: 80%;
+}
+
+td, th {
+    font-size: 1.5rem;
+}
+
+/* Google Fonts */
+.bona-nova-sc-regular {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font__white {
+    color: aliceblue;
+}
+
+.bona-nova-sc-bold {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bona-nova-sc-regular-italic {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: italic;
+}
