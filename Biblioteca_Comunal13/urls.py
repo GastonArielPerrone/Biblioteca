@@ -20,11 +20,11 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # API V1
-    path('usuarios/', include('apps.usuarios.urls')),
-    path('autores/', include('apps.autores.urls')),
-    path('categorias/', include('apps.categorias.urls')),
-    path('libros/', include('apps.libros.urls')),
-    path('prestamos/', include('apps.prestamos.urls')),
-    path('empleados/', include('apps.empleados.urls')),
-    path('editoriales/', include('apps.editoriales.urls')),
+    path('usuarios/', include('apps.usuarios.urls'),name='usuarios'),
+    path('autores/', include('apps.autores.urls'),name='autores'),
+    path('categorias/', include('apps.categorias.urls'),name='categorias'),
+    path('libros/', include('apps.libros.urls'),name='libros'),
+    path('prestamos/', include('apps.prestamos.urls'),name='prestamos'),
+    path('empleados/', include('apps.empleados.urls'),name='empleados'),
+    path('editoriales/', include('apps.editoriales.urls'),name='editoriales'),
 ]

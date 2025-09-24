@@ -23,8 +23,9 @@ header,footer {
     background-color: darkgrey;
 }
 
-.flex__footer {
-
+nav {
+    background-color: black;
+    height: auto;
 }
 
 .align__center {
@@ -68,15 +69,33 @@ td, th {
     font-size: 1.5rem;
 }
 
+.font__white {
+    color: aliceblue;
+}
+
+.nav__flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+
+ul > li {
+    list-style: none;
+    display: inline;
+    margin-right: 20px;
+}
+
 /* Google Fonts */
 .bona-nova-sc-regular {
   font-family: "Bona Nova SC", serif;
   font-weight: 400;
   font-style: normal;
-}
-
-.font__white {
-    color: aliceblue;
 }
 
 .bona-nova-sc-bold {
