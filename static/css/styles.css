@@ -14,9 +14,9 @@ html, body {
     background-size: cover;
 }
 
-body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+main {
+    flex: 1;
+    padding: 2rem;
 }
 
 header,footer {
