@@ -109,3 +109,85 @@ ul > li {
   font-weight: 400;
   font-style: italic;
 }
+/* ================== MEDIA QUERIES ================== */
+
+/* Móvil pequeño (<420px) */
+@media (max-width: 420px) {
+    .nav__flex {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+    ul > li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+    a {
+        display: block;
+        padding: 0.6rem 1rem;
+        font-size: 1.8rem;
+    }
+    header img {
+        width: 120px;
+    }
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        font-size: 1.4rem;
+    }
+}
+
+/* Tablet vertical (421px - 767px) */
+@media (min-width: 421px) and (max-width: 767px) {
+    .nav__flex {
+        flex-direction: column;
+        gap: 0.4rem;
+        align-items: center;
+    }
+    ul > li { display: block; margin: 0.3rem 0; }
+    a { font-size: 1.9rem; padding: 0.5rem 0.8rem; }
+    header img { width: 140px; }
+    table { width: 100%; font-size: 1.45rem; display: block; overflow-x: auto; }
+}
+
+/* Tablet horizontal / laptop pequeño (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .nav__flex {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    ul > li { display: inline-block; margin-right: 14px; }
+    a { font-size: 2rem; }
+    header img { width: 150px; }
+    table { width: 90%; }
+}
+
+/* Escritorio (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .nav__flex {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    a { font-size: 2rem; }
+    table { width: 80%; }
+    header img { width: 150px; }
+}
+
+/* Pantallas grandes (>=1280px) */
+@media (min-width: 1280px) {
+    .nav__flex { justify-content: space-around; }
+    a { font-size: clamp(2rem, 1.8vw, 2.4rem); }
+    table { width: 70%; }
+    header img { width: 180px; }
+    main { max-width: 1400px; margin: 0 auto; padding: 3rem; }
+}
+
+/* Ajustes extra para móviles/tablets */
+@media (max-width: 767px) {
+    html, body {
+        background-position: center top;
+        background-attachment: scroll;
+    }
+}
