@@ -150,6 +150,12 @@ CORS_ALLOWED_ORIGINS = [
     "http://192.168.56.1:3000",
 ]
 
+# Authentication Configuration
+LOGIN_URL = 'index'
+LOGIN_REDIRECT_URL = 'lista_usuarios' 
+LOGOUT_REDIRECT_URL = 'index'
+
+
 # Django REST Framework Configuration
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
