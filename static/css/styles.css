@@ -32,7 +32,15 @@ main {
     display: block;
     margin-left: auto;
     margin-right: auto;
-}  
+}
+
+.links a{
+    margin-top: 1rem;
+    text-align: center;
+    text-decoration: underline !important;
+    font-size: 1.6rem;
+    color: black !important;
+}
 
 header,footer {
     background-color: darkgrey;

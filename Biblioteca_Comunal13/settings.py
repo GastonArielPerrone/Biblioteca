@@ -155,6 +155,10 @@ LOGIN_URL = 'index'
 LOGIN_REDIRECT_URL = 'lista_usuarios' 
 LOGOUT_REDIRECT_URL = 'index'
 
+# settings.py (modo dev)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+
 
 # Django REST Framework Configuration
 REST_FRAMEWORK = {
