@@ -1,23 +1,42 @@
 from django.db import models
-from django.contrib.auth.hashers import make_password, check_password #Herramienta para hashear y chequear password.
-class Empleado(models.Model):
-    nombre_empleado = models.CharField(max_length=100, null=False, blank=False)
-    dni = models.CharField(max_length=15, unique=True, null=False, blank=False)
-    password = models.CharField(max_length=128)
-    telefono = models.CharField(max_length=20)
-    cargo = models.CharField(max_length=50)
-    fecha_contratacion = models.DateField(auto_now_add=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    
-    def guardar(self, *args, **kwargs): #Guarda password hasheándolo si no está hasheado.
-        # Solo hashear si la contraseña no está ya hasheada
-        if not self.password.startswith("pbkdf2_"):
-            self.password = make_password(self.password)
-        super().save(*args, **kwargs)
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+from django.utils import timezone
 
-    def checkeo_password(self, raw_password): #Verifica si la contraseña coincide con el hash.
-        return check_password(raw_password, self.password)
-    
+class EmpleadoManager(BaseUserManager):
+    def create_user(self, dni, password=None, **extra_fields):
+        if not dni:
+            raise ValueError("El DNI debe ser proporcionado")
+        dni = str(dni).strip()
+        user = self.model(dni=dni, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, dni, password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+        extra_fields.setdefault('is_active', True)
+        return self.create_user(dni, password, **extra_fields)
+
+
+class Empleado(AbstractBaseUser, PermissionsMixin):
+    dni = models.CharField('DNI', max_length=20, unique=True)
+    nombre = models.CharField('Nombre', max_length=150, blank=True)
+    apellido = models.CharField('Apellido', max_length=150, blank=True)
+    email = models.EmailField('Email', blank=True)
+    is_staff = models.BooleanField('Staff', default=False)
+    is_active = models.BooleanField('Activo', default=True)
+    date_joined = models.DateTimeField('Fecha de alta', default=timezone.now)
+    last_login = models.DateTimeField('Último login', blank=True, null=True)
+
+    objects = EmpleadoManager()
+
+    USERNAME_FIELD = 'dni'
+    REQUIRED_FIELDS = ['nombre', 'apellido']
+
+    class Meta:
+        verbose_name = 'Empleado'
+        verbose_name_plural = 'Empleados'
+
     def __str__(self):
-        return self.nombre_empleado
+        return f"{self.dni} - {self.apellido} {self.nombre}"

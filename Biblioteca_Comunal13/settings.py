@@ -87,6 +87,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Biblioteca_Comunal13.wsgi.application'
 
+# Authentication Configuration
+AUTH_USER_MODEL = 'empleados.Empleado'
+
+LOGIN_URL = 'empleados:index'
+LOGIN_REDIRECT_URL = 'empleados:lista'
+LOGOUT_REDIRECT_URL = 'empleados:index'
+
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -149,11 +156,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://192.168.56.1:3000",
 ]
-
-# Authentication Configuration
-LOGIN_URL = 'index'
-LOGIN_REDIRECT_URL = 'lista_usuarios' 
-LOGOUT_REDIRECT_URL = 'index'
 
 # settings.py (modo dev)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

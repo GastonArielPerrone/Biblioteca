@@ -9,7 +9,7 @@ class PrestamoAdmin(admin.ModelAdmin):
         "id",
         "titulo_libro",
         "nombre_usuario",
-        "nombre_empleado",
+        "nombre",
         "fecha_prestamo",
         "hora_prestamo",
         "fecha_devolucion",
