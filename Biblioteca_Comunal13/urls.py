@@ -21,7 +21,7 @@ from django.urls import path, include
 from apps.empleados.views import index, register
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     # API V1
     path('index/', index, name='index'),
     path('password_reset/', auth_views.PasswordResetView.as_view(template_name='password_reset.html'), name='password_reset'),
