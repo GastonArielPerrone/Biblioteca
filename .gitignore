@@ -1,0 +1,13 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Django runserver logs and PID
+server.log
+server.pid
+
+# SQLite backups
+db.sqlite3.backup*
+
+# VSCode
+.vscode/
