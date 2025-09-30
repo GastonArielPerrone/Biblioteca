@@ -9,5 +9,9 @@ server.pid
 # SQLite backups
 db.sqlite3.backup*
 
+# Ignore the active SQLite DB and scripts that shouldn't be tracked
+db.sqlite3
+scripts/
+
 # VSCode
 .vscode/
