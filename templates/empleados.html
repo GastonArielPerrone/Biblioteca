@@ -34,7 +34,6 @@
     <tr>
       <th><strong>Empleado</strong></th>
       <th><strong>DNI</strong></th>
-      <th><strong>Password</strong></th>
       <th><strong>Teléfono</strong></th>
       <th><strong>Cargo</strong></th>
       <th><strong>Fecha Contrato</strong></th>
@@ -45,9 +44,8 @@
   <tbody>
     {%for empleado in empleados%}
     <tr>
-      <td>{{empleado.nombre_empleado}}</td>
+      <td>{{empleado.nombre}} {{empleado.apellido}}</td>
       <td>{{empleado.dni}}</td>
-      <td>{{empleado.password}}</td>
       <td>{{empleado.telefono}}</td>
       <td>{{empleado.cargo}}</td>
       <td>{{empleado.fecha_contratacion}}</td>

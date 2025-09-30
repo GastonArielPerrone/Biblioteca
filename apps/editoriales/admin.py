@@ -7,29 +7,29 @@ class EditorialAdmin(admin.ModelAdmin):
     # usa los nombres exactos de los campos de tu modelo
     list_display = (
         'id',
-        'nombre_editorial',
-        'pais_editorial',
-        'calle_editorial',
-        'numero_calle_editorial',
+        'nombre',
+        'pais',
+        'calle',
+        'numero_calle',
         'tipo_ubicacion',  # columna calculada (ver método abajo)
-        'piso_editorial',
-        'departamento_numero_casa_editorial',
+        'piso',
+        'departamento',
         'created_at',
         'updated_at',
     )
 
-    search_fields = ('nombre_editorial', 'pais_editorial', 'calle_editorial')
-    list_filter = ('pais_editorial', 'casa_editorial', 'edificio_editorial', 'created_at')
+    search_fields = ('nombre', 'pais', 'calle')
+    list_filter = ('pais', 'casa', 'edificio', 'created_at')
 
     # columna calculada que combina casa/edificio y muestra algo legible
     def tipo_ubicacion(self, obj):
         partes = []
-        if getattr(obj, 'casa_editorial', False):
+        if getattr(obj, 'casa', False):
             partes.append('Casa')
-        if getattr(obj, 'edificio_editorial', False):
+        if getattr(obj, 'edificio', False):
             partes.append('Edificio')
         if not partes:
             partes.append('—')
         return " / ".join(partes)
     tipo_ubicacion.short_description = 'Tipo de ubicación'
-    tipo_ubicacion.admin_order_field = 'casa_editorial'  # opcional: ordena por este campo
+    tipo_ubicacion.admin_order_field = 'casa'  # opcional: ordena por este campo
