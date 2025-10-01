@@ -26,6 +26,7 @@
       <li><a href="{% url 'lista_editoriales' %}">Editoriales</a></li>
       <li><a href="{% url 'lista_empleados' %}">Empleados</a></li>
       <li><a href="{% url 'lista_prestamos' %}">Préstamos</a></li>
+      <li><a href="{% url 'index' %}">Cerrar sesión</a></li>
     </ul>
     {% if user.is_authenticated %}
     <p>¡Hola, {{ user.nombre }}!🖐️</p>
@@ -49,10 +50,10 @@
   <tbody>
     {%for libro in libros%}
     <tr>
-      <td>{{libro.titulo_libro}}</td>
-      <td>{{libro.nombre_autor}}</td>
-      <td>{{libro.nombre_editorial}}</td>
-      <td>{{libro.nombre_categoria}}</td>
+      <td>{{libro.titulo}}</td>
+      <td>{{libro.autor}}</td>
+      <td>{{libro.editorial}}</td>
+      <td>{{libro.categoria}}</td>
       <td>{{libro.fecha_publicacion}}</td>
       <td>{{libro.cantidad}}</td>
       <td>{{libro.creado}}</td>

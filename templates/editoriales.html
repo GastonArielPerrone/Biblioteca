@@ -26,6 +26,7 @@
       <li><a href="{% url 'lista_editoriales' %}">Editoriales</a></li>
       <li><a href="{% url 'lista_empleados' %}">Empleados</a></li>
       <li><a href="{% url 'lista_prestamos' %}">Préstamos</a></li>
+      <li><a href="{% url 'index' %}">Cerrar sesión</a></li>
     </ul>
     {% if user.is_authenticated %}
     <p>¡Hola, {{ user.nombre }}!🖐️</p>
@@ -38,7 +39,7 @@
     <tr>
       <th><strong>Editorial</strong></th>
       <th><strong>País</strong></th>
-      <th><strong>Celle</strong></th>
+      <th><strong>Calle</strong></th>
       <th><strong>Número calle</strong></th>
       <th><strong>Casa</strong></th>
       <th><strong>Edificio</strong></th>
@@ -51,10 +52,10 @@
   <tbody>
     {%for editorial in editoriales%}
     <tr>
-      <td>{{editorial.nombre_editorial}}</td>
-      <td>{{editorial.pais_editorial}}</td>
-      <td>{{editorial.calle_editorial}}</td>
-      <td>{{editorial.numero_calle_editorial}}</td>
+      <td>{{editorial.nombre}}</td>
+      <td>{{editorial.pais}}</td>
+      <td>{{editorial.calle}}</td>
+      <td>{{editorial.numero_calle}}</td>
       <td>{{editorial.casa_editorial}}</td>
       <td>{{editorial.edificio_editorial}}</td>
       <td>{{editorial.piso_editorial}}</td>

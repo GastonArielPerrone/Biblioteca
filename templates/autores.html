@@ -26,6 +26,7 @@
       <li><a href="{% url 'lista_editoriales' %}">Editoriales</a></li>
       <li><a href="{% url 'lista_empleados' %}">Empleados</a></li>
       <li><a href="{% url 'lista_prestamos' %}">Préstamos</a></li>
+      <li><a href="{% url 'index' %}">Cerrar sesión</a></li>
     </ul>
     {% if user.is_authenticated %}
     <p>¡Hola, {{ user.nombre }}!🖐️</p>
