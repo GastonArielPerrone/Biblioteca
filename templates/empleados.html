@@ -15,6 +15,8 @@
   <header>
     <img src="{% static './multimedia/logo_BC13.png' %}" width="150">
   </header>
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">☰</label>
   <nav class="nav__flex font__white">
     <ul class="bona-nova-sc-regular">
       <li><a href="{% url 'lista_usuarios' %}">Usuarios</a></li>
@@ -25,7 +27,6 @@
       <li><a href="{% url 'lista_empleados' %}">Empleados</a></li>
       <li><a href="{% url 'lista_prestamos' %}">Préstamos</a></li>
     </ul>
-    <a href="{% url 'index' %}">Cerrar sesión</a>
     {% if user.is_authenticated %}
     <p>¡Hola, {{ user.nombre }}!🖐️</p>
     {% endif %}
