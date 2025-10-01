@@ -37,6 +37,7 @@
     <table border="1" class="bona-nova-sc-regular">
   <thead>
     <tr>
+      <th><strong>ID</strong></th>
       <th><strong>Libro</strong></th>
       <th><strong>Usuario</strong></th>
       <th><strong>Empleado</strong></th>
@@ -46,12 +47,12 @@
       <th><strong>Hora Devolución</strong></th>
       <th><strong>Estado</strong></th>
       <th><strong>Creado</strong></th>
-      <th><strong>Actualizado</strong></th>
     </tr>
   </thead>
   <tbody>
     {%for prestamo in prestamos%}
     <tr>
+      <td>{{prestamo.id}}</td>
       <td>{{prestamo.titulo_libro}}</td>
       <td>{{prestamo.nombre_usuario}}</td>
       <td>{{prestamo.nombre_empleado}}</td>
@@ -61,7 +62,6 @@
       <td>{{prestamo.hora_devolucion}}</td>
       <td>{{prestamo.estado}}</td>
       <td>{{prestamo.created_at}}</td>
-      <td>{{prestamo.updated_at}}</td>
     </tr>
     {% endfor %}
   </tbody>

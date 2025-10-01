@@ -37,6 +37,7 @@
     <table border="1" class="bona-nova-sc-regular">
   <thead>
     <tr>
+      <th><strong>ID</strong></th>
       <th><strong>Empleado</strong></th>
       <th><strong>DNI</strong></th>
       <th><strong>Teléfono</strong></th>
@@ -48,6 +49,7 @@
   <tbody>
     {%for empleado in empleados%}
     <tr>
+      <td>{{empleado.id}}</td>
       <td>{{empleado.nombre}} {{empleado.apellido}}</td>
       <td>{{empleado.dni}}</td>
       <td>{{empleado.telefono}}</td>

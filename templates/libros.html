@@ -37,6 +37,7 @@
     <table border="1" class="bona-nova-sc-regular">
   <thead>
     <tr>
+      <th><strong>ID</strong></th>
       <th><strong>Título</strong></th>
       <th><strong>Autor</strong></th>
       <th><strong>Editorial</strong></th>
@@ -50,6 +51,7 @@
   <tbody>
     {%for libro in libros%}
     <tr>
+      <td>{{libro.id}}</td>
       <td>{{libro.titulo}}</td>
       <td>{{libro.autor}}</td>
       <td>{{libro.editorial}}</td>

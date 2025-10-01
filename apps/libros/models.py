@@ -4,7 +4,7 @@ from apps.editoriales.models import Editorial
 from apps.categorias.models import Categoria
 
 class Libro(models.Model):
-    titulo = models.CharField(max_length=200, null=False, blank=False, db_column='titulo_libro')
+    titulo_libro = models.CharField(max_length=200, null=False, blank=False, db_column='titulo_libro')
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE, null=False, blank=False, db_column='nombre_autor')
     editorial = models.ForeignKey(Editorial, on_delete=models.CASCADE, null=False, blank=False, db_column='nombre_editorial')
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null=False, blank=False, db_column='nombre_categoria')
@@ -14,4 +14,4 @@ class Libro(models.Model):
     actualizado = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return self.titulo
+        return self.titulo_libro

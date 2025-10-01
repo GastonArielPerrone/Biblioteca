@@ -37,6 +37,7 @@
     <table border="1" class="bona-nova-sc-regular">
   <thead>
     <tr>
+      <th><strong>ID</strong></th>
       <th><strong>Editorial</strong></th>
       <th><strong>País</strong></th>
       <th><strong>Calle</strong></th>
@@ -52,6 +53,7 @@
   <tbody>
     {%for editorial in editoriales%}
     <tr>
+      <td>{{editorial.id}}</td>
       <td>{{editorial.nombre}}</td>
       <td>{{editorial.pais}}</td>
       <td>{{editorial.calle}}</td>

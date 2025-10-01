@@ -37,6 +37,7 @@
     <table border="1" class="bona-nova-sc-regular">
   <thead>
     <tr>
+      <th><strong>ID</strong></th>
       <th><strong>Autor</strong></th>
       <th><strong>País</strong></th>
     </tr>
@@ -44,6 +45,7 @@
   <tbody>
     {%for autor in autores%}
     <tr>
+      <td>{{autor.id}}</td>
       <td>{{autor.nombre}}</td>
       <td>{{autor.nacionalidad}}</td>
     </tr>

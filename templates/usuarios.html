@@ -37,6 +37,7 @@
     <table border="1" class="bona-nova-sc-regular">
   <thead>
     <tr>
+      <th><strong>ID</strong></th>
       <th><strong>Usuario</strong></th>
       <th><strong>DNI</strong></th>
       <th><strong>Teléfono</strong></th>
@@ -47,12 +48,12 @@
       <th><strong>Piso</strong></th>
       <th><strong>Depto</strong></th>
       <th><strong>Creado</strong></th>
-      <th><strong>Actualizado</strong></th>
     </tr>
   </thead>
   <tbody>
     {%for usuario in usuarios%}
     <tr>
+      <td>{{usuario.id}}</td>
       <td>{{usuario.nombre_usuario}}</td>
       <td>{{usuario.dni}}</td>
       <td>{{usuario.telefono}}</td>
@@ -63,7 +64,6 @@
       <td>{{usuario.piso}}</td>
       <td>{{usuario.departamento_numero_casa}}</td>
       <td>{{usuario.created_at}}</td>
-      <td>{{usuario.updated_at}}</td>
     </tr>
     {% endfor %}
   </tbody>
