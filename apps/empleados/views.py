@@ -44,6 +44,8 @@ def register(request):
                     apellido=data.get('apellido', ''),
                     email=data.get('email', ''),
                     telefono=data.get('telefono', ''),
+                    cargo =data.get('cargo', ''),
+                    fecha_contratacion=data.get('fecha_contratacion', None)
                 )
             except Exception as e:
                 # Error al crear (por ejemplo, race condition de duplicado)
