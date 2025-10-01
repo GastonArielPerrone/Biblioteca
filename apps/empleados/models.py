@@ -30,7 +30,6 @@ class Empleado(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField('Staff', default=False)
     is_active = models.BooleanField('Activo', default=True)
     date_joined = models.DateTimeField('Fecha de alta', default=timezone.now)
-    last_login = models.DateTimeField('Último login', blank=True, null=True)
 
     objects = EmpleadoManager()
 
