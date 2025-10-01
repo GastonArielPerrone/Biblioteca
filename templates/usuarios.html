@@ -26,6 +26,9 @@
       <li><a href="{% url 'lista_prestamos' %}">Préstamos</a></li>
     </ul>
     <a href="{% url 'index' %}">Cerrar sesión</a>
+    {% if user.is_authenticated %}
+    <p>¡Hola, {{ user.nombre }}!🖐️</p>
+    {% endif %}
   </nav>
   <main>
     <h1 class="bona-nova-sc-bold font__white">Usuarios</h1>
