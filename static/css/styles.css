@@ -132,6 +132,12 @@ ul > li {
     margin-right: 20px;
 }
 
+.black-text-size {
+    color: black;
+    font-size: 1.6rem;
+    text-decoration: underline;
+}
+
 /* Google Fonts */
 .bona-nova-sc-regular {
   font-family: "Bona Nova SC", serif;
