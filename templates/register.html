@@ -64,11 +64,11 @@
                 {{ form.confirm_password }}<br>
 
                 <button type="submit">Registrar</button>
-        </form>
-    <a href="{% url 'index' %}">Volver al login</a>
-    </div>
-</div>
-
+        </form><br>
+        {% if error %}
+            <p style="color:red">{{ error }}</p>
+        {% endif %}
+        <button href="{% url 'index' %}">Volver al login</button>
     </div>
 </body>
 </html>
