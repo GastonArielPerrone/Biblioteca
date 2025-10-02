@@ -17,7 +17,7 @@ main {
     padding: 1rem;
 }
 
-.login-container {
+.login-container, .register-container {
     background: #f9f9f9 !important;
     display: inline-block;
     padding: 2rem;
@@ -278,28 +278,6 @@ ul > li {
         display: block;
         background-color: black;
       }
-}
-
-.register-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.register-card {
-  background: #fff;
-  padding: 28px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  max-width: 500px;
-}
-
-.register-card h1 {
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-  text-align: center;
 }
 
 .form-row {

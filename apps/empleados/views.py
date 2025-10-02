@@ -45,6 +45,8 @@ def register(request):
                     email=data.get('email', ''),
                     telefono=data.get('telefono', ''),
                     cargo =data.get('cargo', ''),
+                    is_staff=data.get('is_staff'),
+                    is_active=data.get('is_active'),
                     fecha_contratacion=data.get('fecha_contratacion', None)
                 )
             except Exception as e:

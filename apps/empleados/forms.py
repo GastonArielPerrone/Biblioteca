@@ -9,6 +9,8 @@ class RegistrationForm(forms.Form):
     email = forms.EmailField(required=False, label="E-mail")
     telefono = forms.CharField(max_length=20, required=False, label="Teléfono")
     cargo = forms.CharField(max_length=100, label="Cargo")
+    is_staff = forms.BooleanField(required=False, initial=False, label="Staff Administrativo")
+    is_active = forms.BooleanField(required=False, initial=False, label="Empleado Activo")
     fecha_contratacion = forms.DateField(required=False, widget=forms.DateInput(attrs={'type': 'date'}), label="Fecha de contratación")
     password = forms.CharField(widget=forms.PasswordInput, label="Contraseña")
     confirm_password = forms.CharField(widget=forms.PasswordInput, label="Confirmar contraseña")

@@ -8,7 +8,7 @@ class EmpleadoAdmin(UserAdmin):
     list_display = ('dni', 'apellido', 'nombre', 'email', 'is_staff', 'is_active')
     list_filter = ('is_staff', 'is_active')
     search_fields = ('dni', 'apellido', 'nombre', 'email')
-    ordering = ('dni',)
+    ordering = ('id',)
 
     fieldsets = (
         (None, {'fields': ('dni', 'password')}),

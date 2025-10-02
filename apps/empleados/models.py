@@ -27,8 +27,8 @@ class Empleado(AbstractBaseUser, PermissionsMixin):
     telefono = models.CharField('Teléfono', max_length=20, blank=True)
     cargo = models.CharField('Cargo', max_length=100, blank=True)
     fecha_contratacion = models.DateField('Fecha de contratación', blank=True, null=True)
-    is_staff = models.BooleanField('Staff', default=False)
-    is_active = models.BooleanField('Activo', default=True)
+    is_staff = models.BooleanField('Staff')
+    is_active = models.BooleanField('Activo')
     date_joined = models.DateTimeField('Fecha de alta', default=timezone.now)
 
     objects = EmpleadoManager()
