@@ -5,7 +5,7 @@ from apps.libros.models import Libro
 # Register your models here.
 @admin.register(Libro)
 class LibroAdmin(admin.ModelAdmin):
-    list_display = ("titulo_libro",
+    list_display = ("titulo",
                     "autor",
                     "editorial",
                     "categoria",
@@ -13,7 +13,7 @@ class LibroAdmin(admin.ModelAdmin):
                     "cantidad",
                     "creado",
                     "actualizado",)
-    search_fields = ("titulo_libro",
+    search_fields = ("titulo",
                     "nombre_autor",
                     "nombre_editorial",
                     "nombre_categoria",
