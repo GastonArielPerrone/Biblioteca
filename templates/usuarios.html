@@ -68,6 +68,13 @@
     {% endfor %}
   </tbody>
 </table>
+<div class="register__alldata">
+  <h2 class="bona-nova-sc-bold">Registro de Usuario</h2>
+  <form method="post" action="{% url 'lista_usuarios' %}">
+    {{ form.as_p }}<br>
+    <button type="submit">Registrar</button><br>
+  </form>
+</div>
   </main>
   <footer>
     <p class="bona-nova-sc-regular align__center">©Copyright Biblioteca Comunal 13.Todos los derechos reservados</p>

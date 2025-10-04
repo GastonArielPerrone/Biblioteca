@@ -138,6 +138,15 @@ ul > li {
     text-decoration: underline;
 }
 
+.register__alldata {
+    margin-top: 3rem;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+    background-color: #f9f9f9;
+    width: auto;
+}
+
 /* Google Fonts */
 .bona-nova-sc-regular {
   font-family: "Bona Nova SC", serif;
