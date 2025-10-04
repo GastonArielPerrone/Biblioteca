@@ -3,9 +3,7 @@ from apps.usuarios.models import Usuario
 
 class RegistrationForm(forms.Form):
     nombre_usuario = forms.CharField(max_length=150, required=False, label="Nombre")
-    apellido = forms.CharField(max_length=150, label="Apellido")
     dni = forms.CharField(max_length=20, label="DNI")
-    email = forms.EmailField(required=False, label="E-mail")
     telefono = forms.CharField(max_length=20, required=False, label="Teléfono")
     calle = forms.CharField(max_length=255, required=False, label="Dirección")
     numero_calle = forms.IntegerField(required=False, label="Número de calle")

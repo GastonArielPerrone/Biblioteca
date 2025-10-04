@@ -13,9 +13,7 @@ def lista_usuarios(request):
             try:
                 Usuario.objects.create(
                     dni=data['dni'],
-                    nombre=data['nombre_usuario'],
-                    apellido=data['apellido'],
-                    email=data.get('email', ''),
+                    nombre_usuario=data['nombre_usuario'],
                     telefono=data.get('telefono', ''),
                     calle=data.get('calle', ''),
                     numero_calle=data.get('numero_calle', 0),
@@ -23,7 +21,6 @@ def lista_usuarios(request):
                     edificio=data.get('edificio', False),
                     piso=data.get('piso', ''),
                     departamento_numero_casa=data.get('departamento_numero_casa', ''),
-                    fecha_nacimiento=data.get('fecha_nacimiento', None)
                 )
                 return redirect('lista_usuarios')  # Evita resubmisión del formulario
             except Exception as e:
