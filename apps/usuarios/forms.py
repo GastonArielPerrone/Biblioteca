@@ -13,7 +13,6 @@ class RegistrationForm(forms.Form):
     edificio = forms.BooleanField(required=False, label="Edificio")
     piso = forms.CharField(max_length=10, required=False, label="Piso")
     departamento_numero_casa = forms.CharField(max_length=10, required=False, label="Departamento/Número de casa")
-    fecha_nacimiento = forms.DateField(required=False, widget=forms.DateInput(attrs={'type': 'date'}), label="Fecha de nacimiento")
 
     def clean_dni(self):
         dni = self.cleaned_data.get('dni')
