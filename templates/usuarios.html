@@ -71,6 +71,13 @@
 <div class="register__alldata">
   <h2 class="bona-nova-sc-bold">Registro de Usuario</h2>
   <form method="post" action="{% url 'lista_usuarios' %}">
+    {% csrf_token %}
+    {% if error %}
+      <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% if success %}
+      <p style="color: green;">{{ success }}</p>
+    {% endif %}
     {{ form.as_p }}<br>
     <button type="submit">Registrar</button><br>
   </form>
