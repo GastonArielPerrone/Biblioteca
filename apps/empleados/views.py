@@ -61,6 +61,28 @@ def register(request):
     return render(request, "register.html", {"form": form})
 
 def lista_empleados(request):
-    return render(request=request,
-                  template_name='empleados.html',
-                  context={"empleados":Empleado.objects.all()})
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            try:
+                cast(EmpleadoManager, Empleado.objects).create_user(
+                    dni=data['dni'],
+                    password=data['password'],
+                    nombre=data.get('nombre', ''),
+                    apellido=data.get('apellido', ''),
+                    email=data.get('email', ''),
+                    telefono=data.get('telefono', ''),
+                    cargo =data.get('cargo', ''),
+                    is_staff=data.get('is_staff'),
+                    is_active=data.get('is_active'),
+                    fecha_contratacion=data.get('fecha_contratacion', None)
+                )
+            except Exception as e:
+                # Error al crear (por ejemplo, race condition de duplicado)
+                return render(request, "empleados.html", {"form": form, "error": f"Error al crear el usuario: {e}"})
+            return redirect('lista_empleados')
+    else:
+        form = RegistrationForm()
+    empleados = Empleado.objects.all()
+    return render(request, 'empleados.html', {'form': form, 'empleados': empleados})

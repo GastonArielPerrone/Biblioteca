@@ -52,6 +52,14 @@
     {% endfor %}
   </tbody>
 </table>
+<div class="register__alldata">
+  <h2 class="bona-nova-sc-bold">Registro de Autor</h2>
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Guardar</button>
+  </form>
+</div>
   </main>
   <footer>
     <p class="bona-nova-sc-regular align__center">©Copyright Biblioteca Comunal 13.Todos los derechos reservados</p>
