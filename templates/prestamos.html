@@ -66,6 +66,19 @@
     {% endfor %}
   </tbody>
 </table>
+    <div class="register__alldata">
+      <form method="post">
+          <h2 class="bona-nova-sc-bold">Cargar préstamo</h2>
+          {% csrf_token %}
+          {{ form.as_p }}
+          {% for field in form %}
+              {% for error in field.errors %}
+                  <div class="error" style="color: red;">{{ error }}</div>
+              {% endfor %}
+          {% endfor %}
+          <button type="submit">Cargar Préstamo</button>
+      </form>
+    </div>
   </main>
   <footer>
     <p class="bona-nova-sc-regular align__center">©Copyright Biblioteca Comunal 13.Todos los derechos reservados</p>

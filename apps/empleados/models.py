@@ -41,4 +41,4 @@ class Empleado(AbstractBaseUser, PermissionsMixin):
         verbose_name_plural = 'Empleados'
 
     def __str__(self):
-        return f"{self.dni} - {self.apellido} {self.nombre}"
+        return f"{self.apellido} {self.nombre}"
