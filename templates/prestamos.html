@@ -47,6 +47,7 @@
       <th><strong>Hora Devolución</strong></th>
       <th><strong>Estado</strong></th>
       <th><strong>Creado</strong></th>
+      <th><strong>Acciones</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -58,10 +59,20 @@
       <td>{{prestamo.nombre_empleado}}</td>
       <td>{{prestamo.fecha_prestamo}}</td>
       <td>{{prestamo.hora_prestamo}}</td>
-      <td>{{prestamo.fecha_devolucion}}</td>
-      <td>{{prestamo.hora_devolucion}}</td>
+      <td>{{prestamo.fecha_devolucion|default:"--"}}</td>
+      <td>{{prestamo.hora_devolucion|default:"--"}}</td>
       <td>{{prestamo.estado}}</td>
       <td>{{prestamo.created_at}}</td>
+      <td>
+        {% if not prestamo.fecha_devolucion %}
+          <form action="{% url 'devolver_prestamo' prestamo.id %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Devolver</button>
+          </form>
+        {% else %}
+          -
+        {% endif %}
+      </td>
     </tr>
     {% endfor %}
   </tbody>
